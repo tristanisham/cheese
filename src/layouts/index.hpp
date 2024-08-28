@@ -19,7 +19,8 @@ namespace cheese {
 
         std::vector<Rectangle> layoutRecs;
         Vector2 anchor01 = {0, 0};            // ANCHOR ID:1
-        Point<float> mouse{};
+        /*Point<float> mouse{};*/
+        Mouse mouse{};
         // methods
 
 
@@ -52,5 +53,3 @@ namespace cheese {
 
 
 }
-
-void RecordButton();

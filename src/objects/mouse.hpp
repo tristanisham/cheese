@@ -36,7 +36,9 @@ namespace cheese {
         float y;
 
 
-        static Point<float> pos();
+        Point<float> pos() const {
+            return Point<float>{this->x, this->y};
+        }
 
         // LeftClick clicks the left button of the mouse at its current position.
         void LeftClick() const;

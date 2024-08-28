@@ -58,13 +58,7 @@ void cheese::winMouseClick() {
 }
 #endif
 
-cheese::Point<float> cheese::Mouse::pos() {
-#if defined(_WIN32)
-    return winMousePos();
-#else
-    throw cheese::ErrUnsupportedPlatform("This function is only available on Windows");
-#endif
-}
+
 
 
 void cheese::Mouse::LeftClick() const {
