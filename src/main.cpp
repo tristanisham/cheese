@@ -4,15 +4,17 @@
 #define RAYGUI_IMPLEMENTATION
 
 #include "raylib.h"
+
 #include "layouts/index.hpp"
 
 int main() {
 // Initialization
     //---------------------------------------------------------------------------------------
-    int screenWidth = 1080;
-    int screenHeight = 740;
+    int screenWidth = 617;
+    int screenHeight = 520;
 
     InitWindow(screenWidth, screenHeight, "Cheese");
+    GuiLoadStyle(ASSETS_PATH"style_dark.rgs");
 
    cheese::IndexLayout iLayout{screenWidth, screenHeight};
 

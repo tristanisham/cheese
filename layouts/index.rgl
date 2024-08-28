@@ -1,16 +1,20 @@
 #
 # rgl layout text file (v4.0) - raygui layout file generated using rGuiLayout
 #
-# Number of controls:     5
+# Number of controls:     9
 #
 # Ref. window:    r <x> <y> <width> <height>
 # Anchor info:    a <id> <name> <posx> <posy> <enabled>
 # Control info:   c <id> <type> <name> <rectangle> <anchor_id> <text>
 #
 r 0 40 -1 -1
-a 001 anchor01 647 264 1
-c 000 20 ScrollPanel004 240 48 840 695 1 
-c 001 1 GroupBox000 0 8 1080 735 1 Controls
-c 002 5 Button001 960 25 120 24 1 Record
-c 003 21 ListView004 3 24 238 719 1 ONE;TWO;THREE
-c 004 19 StatusBar005 840 25 120 24 1 SAMPLE TEXT
+a 001 anchor01 8 8 1
+c 000 1 GroupBox000 0 8 616 512 1 Controls
+c 001 5 RecordButton 328 184 120 24 1 Record
+c 002 21 MacroList 0 16 184 480 1 ONE;TWO;THREE
+c 003 19 StatusBar 184 16 432 24 1 Macro Controls
+c 004 5 SaveButton 328 256 120 24 1 Save
+c 005 5 ReplayButton 0 496 88 24 1 Replay
+c 006 4 LabelRecord 328 160 120 24 1 Record your mouse
+c 007 4 LabelSave 328 232 144 24 1 Save your recording
+c 008 5 DeleteButton 88 496 96 24 1 Delete 

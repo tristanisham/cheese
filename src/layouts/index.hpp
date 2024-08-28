@@ -1,55 +1,85 @@
 #pragma once
 #include "raygui.h"
-
 #include <iostream>
 #include <vector>
 #include "objects/mouse.hpp"
 namespace cheese {
 
-    class IndexLayout {
-    private:
-        // Define controls variables
-        Rectangle ScrollPanelScrollView = {0, 0, 0, 0};
-        Vector2 ScrollPanelScrollOffset = {0, 0};
-        Vector2 ScrollPanelBoundsOffset = {0, 0};            // ScrollPanel: ScrollPanel
-        int ListViewScrollIndex = 0;
-        int ListViewActive = 0;            // ListView: ListView
-        int screenWidth;
-        int screenHeight;
-
-        std::vector<Rectangle> layoutRecs;
-        Vector2 anchor01 = {0, 0};            // ANCHOR ID:1
-        /*Point<float> mouse{};*/
-        Mouse mouse{};
-        // methods
+	class IndexLayout {
+	private:
+		// Define controls variables
 
 
-    public:
-        std::string groupBoxText = "Controls";
-        std::string recordButtonText = "Record";
-        std::string listViewText = "A;B;C";
-        std::string statusBarText = "Sample Text";
-        std::string scrollPanelText = "Scroll Text";
 
-        IndexLayout(int width, int height): screenWidth(width), screenHeight(height) {
-            this->layoutRecs = {
+		int MacroListScrollIndex = 0;
+		int MacroListActive = 0;            // ListView: ListView
+		int screenWidth;
+		int screenHeight;
 
-                    {anchor01.x + 240, anchor01.y + 48, 840,  695},    // ScrollPanel: ScrollPanel
 
-                    {anchor01.x + 0,   anchor01.y + 8,  1080, 720},    // GroupBox: GroupBox
+		std::vector<Rectangle> layoutRecs;
+		Vector2 anchor = { 0, 0 };            // ANCHOR ID:1
+		/*Point<float> mouse{};*/
+		Mouse mouse{};
+		// methods
 
-                    {anchor01.x + 960, anchor01.y + 25, 120,  24},    // Button: RecordButton
 
-                    {anchor01.x + 3,   anchor01.y + 24, 238,  720},    // ListView: ListView
+	public:
+		// layout_name: controls initialization
+		//----------------------------------------------------------------------------------
+		// Const text
+		std::string GroupText = "Macros";    // GROUPBOX: GroupBox000
+		std::string RecordButtonText = "Record";    // BUTTON: RecordButton
+		std::string MacroListText = "ONE;TWO;THREE";    // LISTVIEW: MacroList
+		std::string StatusBarText = "#21# (0,0)";    // STATUSBAR: StatusBar
+		std::string SaveButtonText = "Save";    // BUTTON: SaveButton
+		std::string ReplayButtonText = "Replay";    // BUTTON: ReplayButton
+		std::string LabelRecordText = "Record your mouse";    // LABEL: LabelRecord
+		std::string LabelSaveText = "Save your recording";    // LABEL: LabelSave
+		std::string DeleteButtonText = "Delete ";    // BUTTON: DeleteButton
 
-                    {anchor01.x + 840, anchor01.y + 25, 120,  24},    // StatusBar: StatusBar
-            };
-        }
+		IndexLayout(int width, int height) : screenWidth(width), screenHeight(height) {
+			this->layoutRecs = {
+				{
+					anchor.x + 0, anchor.y + 8, 616, 512
+				},    // GroupBox: GroupBox000
+				{
+					anchor.x + 328, anchor.y + 184, 120, 24
+				},    // Button: RecordButton
+				{
+					anchor.x + 0, anchor.y + 16, 184, 480
+				},    // ListView: MacroList
+				{
+					anchor.x + 184, anchor.y + 16, 432, 24
+				},    // StatusBar: StatusBar
+				{
+					anchor.x + 328, anchor.y + 256, 120, 24
+				},    // Button: SaveButton
+				{
+					anchor.x + 0, anchor.y + 496, 88, 24
+				},    // Button: ReplayButton
+				{
+					anchor.x + 328, anchor.y + 160, 120, 24
+				},    // Label: LabelRecord
+				{
+					anchor.x + 328, anchor.y + 232, 144, 24
+				},    // Label: LabelSave
+				{
+					anchor.x + 88, anchor.y + 496, 96, 24
+				},    // Button: DeleteButton
+			};
 
-        void draw();
-        void update();
-        void recordButton();
-    };
+
+		}
+
+		void draw();
+		void update();
+		// function buttons
+		void recordButton();
+		void saveButton();
+		void replayButton();
+		void deleteButton();
+	};
 
 
 }
