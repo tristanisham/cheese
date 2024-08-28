@@ -2,25 +2,25 @@
 
 
 json cheese::Mouse::TimePoint::serialize() {
-	json j = {
-		{"t", this->timestamp},
-		{"x", this->coords.x},
-		{"y", this->coords.y},
-	};
+    json j = {
+            {"t", this->timestamp},
+            {"x", this->coords.x},
+            {"y", this->coords.y},
+    };
 
-	return j;
+    return j;
 }
 
 json cheese::Mouse::serialize() {
-	json j{};
-	for (TimePoint& tp : this->buffer) {
-		j.push_back(tp.serialize());
-	}
+    json j{};
+    for (TimePoint &tp: this->buffer) {
+        j.push_back(tp.serialize());
+    }
 
-	return j;
+    return j;
 }
 
 void cheese::Mouse::save() {
-	auto tp = TimePoint{ this->pos() };
-	this->buffer.push_back(tp);
+    auto tp = TimePoint{this->pos()};
+    this->buffer.push_back(tp);
 }

@@ -41,7 +41,7 @@ namespace cheese {
 			long long timestamp;
 			Point<float> coords;
 		public:
-			TimePoint(Point<float> p) : coords(p) {
+			explicit TimePoint(Point<float> p) : coords(p) {
 				const auto init = std::chrono::system_clock::now();
 				this->timestamp = std::chrono::duration_cast<std::chrono::seconds>(init.time_since_epoch()).count();
 			}
@@ -58,7 +58,7 @@ namespace cheese {
 
 
 
-		Point<float> pos() const {
+		[[nodiscard]] Point<float> pos() const {
 			return Point<float>{this->x, this->y};
 		}
 
