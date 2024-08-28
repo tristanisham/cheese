@@ -61,7 +61,7 @@ void cheese::winMouseClick() {
 
 
 
-void cheese::Mouse::LeftClick() const {
+void cheese::Mouse::leftClick() const {
 #if defined(_WIN32)
     SetCursorPos(static_cast<int>(this->x), static_cast<int>(this->y));
     // Set up the input structure
@@ -82,7 +82,7 @@ void cheese::Mouse::LeftClick() const {
 #endif
 }
 
-void cheese::Mouse::RightClick() const {
+void cheese::Mouse::rightClick() const {
 #if defined(_WIN32)
     SetCursorPos(static_cast<int>(this->x), static_cast<int>(this->y));
 

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 #include "objects/mouse.hpp"
+
+
 namespace cheese {
 
 	class IndexLayout {
