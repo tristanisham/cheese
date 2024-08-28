@@ -9,14 +9,14 @@ void cheese::IndexLayout::recordButton() {}
 void cheese::IndexLayout::update() {
     try {
         auto winMp = cheese::winMousePos();
-        this->mousePos.y = winMp.y;
-        this->mousePos.x = winMp.x;
+        this->mouse.y = winMp.y;
+        this->mouse.x = winMp.x;
     } catch (std::exception& err) {
         // TODO: add better support for Linux and MacOS
         auto genMP = GetMousePosition();
         std::cerr << err.what() << std::endl;
-        this->mousePos.y = genMP.y;
-        this->mousePos.x = genMP.x;
+        this->mouse.y = genMP.y;
+        this->mouse.x = genMP.x;
     }
 
 //    std::cout << this->ListViewActive << std::endl;
@@ -41,5 +41,5 @@ void cheese::IndexLayout::draw() {
 
 
 
-    this->statusBarText = std::format("X: {}, Y: {}", this->mousePos.x, this->mousePos.y);
+    this->statusBarText = std::format("X: {}, Y: {}", this->mouse.x, this->mouse.y);
 }
