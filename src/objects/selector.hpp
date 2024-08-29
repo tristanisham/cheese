@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Windows.h>
+#include <windows.h>
 #include <iostream>
 #include <string>
 
@@ -29,7 +29,7 @@ public:
         return targetWindow;
     }
 
-    void bringWindowToFront() {
+    void bringWindowToFront() const {
         if (targetWindow) {
             SetForegroundWindow(targetWindow);
         }
