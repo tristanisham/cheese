@@ -1,5 +1,5 @@
 #include "mouse.hpp"
-
+#include "selector.hpp"
 
 json cheese::Mouse::TimePoint::serialize() {
     json j = {

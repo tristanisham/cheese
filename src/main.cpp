@@ -6,6 +6,7 @@
 #include "raylib.h"
 
 #include "layouts/index.hpp"
+#include <iostream>
 
 int main() {
 // Initialization
@@ -14,6 +15,7 @@ int main() {
     int screenHeight = 520;
 
     InitWindow(screenWidth, screenHeight, "Cheese");
+    std::cout << ASSETS_PATH"style_dark.rgs" << std::endl;
     GuiLoadStyle(ASSETS_PATH"style_dark.rgs");
 
    cheese::IndexLayout iLayout{screenWidth, screenHeight};
