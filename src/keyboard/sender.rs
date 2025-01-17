@@ -1,11 +1,9 @@
-use std::mem;
 
-use windows::Win32::{
-    Foundation::{GetLastError, WIN32_ERROR},
+use windows::Win32::
     UI::Input::KeyboardAndMouse::{
-        keybd_event, MapVirtualKeyW, SendInput, VkKeyScanW, INPUT, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, MAPVK_VK_TO_VSC, VIRTUAL_KEY
-    },
-};
+        keybd_event, MapVirtualKeyW, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, MAPVK_VK_TO_VSC
+    }
+;
 
 use super::{reciever::KeyAction, Record};
 
